@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  octokit-playground:
+    container_name: octokit-playground
+    build: .
+    restart: unless-stopped
+    command: sleep infinity
+    environment:
+      - GITHUB_TOKEN
+    volumes:
+      - ./playground.js:/app/index.js
